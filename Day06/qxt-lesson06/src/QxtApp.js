@@ -7,6 +7,7 @@ import QxtEventForm5 from './components/QxtEventForm5';
 import QxtRenderCon from './components/QxtRenderCon';
 import QxtRenderArray from './components/QxtRenderArray';
 import QxtRenderListObject from './components/QxtRenderListObject';
+import QxtProductList from "./components/QxtProductList";
 
 class QxtApp extends Component {
     // Hàm xử lý dữ liệu từ form student
@@ -28,6 +29,8 @@ class QxtApp extends Component {
           <QxtRenderCon />
           <QxtRenderArray />
           <QxtRenderListObject />
+          <h1 className="text-center">Quản Lý Sản Phẩm</h1>
+          <QxtProductList />
       </div>
     );
   }
