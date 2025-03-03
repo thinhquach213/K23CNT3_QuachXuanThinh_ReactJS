@@ -1,24 +1,76 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-class QxrEventForm3 extends Component {
-  render() {
-    return (
-      <div className='alter alter-success'>
-        <h2>Form input - radio</h2>
-        <form>
-            <div>
-                <label htmlFor=''>Gioi Tinh:
-                </label> &nbsp; &nbsp; &nbsp;
-                <input type='radio' name='Qxtgioitinh' value="Nam " id='QxtNam'/> 
-                <label htmlFor='QxtNam'>Nam</label>  &nbsp; &nbsp; &nbsp;
-                <input type='radio' name='Qxtgioitinh' value="Nam " id='QxtNu'/> 
-                <label htmlFor='QxtNu'>Nu</label> &nbsp; &nbsp; &nbsp;
-                <input type='radio' name='Qxtgioitinh' value="khac " id='Qxtkhac'/> 
-                <label htmlFor='Qxtkhac'>Khac</label>
+export default class QxtEventForm3 extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            vtdGioiTinh: "Nam", // Giá trị mặc định
+        };
+    }
+
+    // Hàm xử lý thay đổi giới tính
+    qxtHandleChange = (event) => {
+        this.setState({
+            vtdGioiTinh: event.target.value, // Cập nhật state khi chọn giới tính
+        });
+    };
+
+    // Hàm xử lý sự kiện submit form
+    qxtHandleSubmit = (event) => {
+        event.preventDefault(); // Ngăn chặn reload trang
+        alert(`Giới tính của bạn là: ${this.state.vtdGioiTinh}`);
+    };
+
+    render() {
+        return (
+            <div className="alert alert-success">
+                <h2>Form Input - Radio</h2>
+                <form onSubmit={this.qxtHandleSubmit}>
+                    <div>
+                        <label>Giới tính:</label>
+
+                        {/* Radio button Nam */}
+                        <input
+                            type="radio"
+                            name="qxtGioiTinh"
+                            id="qxtNam"
+                            className="mx-2"
+                            value="Nam"
+                            checked={this.state.vtdGioiTinh === 'Nam'}
+                            onChange={this.qxtHandleChange}
+                        />
+                        <label htmlFor="qxtNam">Nam</label>
+
+                        {/* Radio button Nữ */}
+                        <input
+                            type="radio"
+                            name="qxtGioiTinh"
+                            id="qxtNu"
+                            className="mx-2"
+                            value="Nữ"
+                            checked={this.state.vtdGioiTinh === 'Nữ'}
+                            onChange={this.qxtHandleChange}
+                        />
+                        <label htmlFor="qxtNu">Nữ</label>
+
+                        {/* Radio button Khác */}
+                        <input
+                            type="radio"
+                            name="qxtGioiTinh"
+                            id="qxtKhac"
+                            className="mx-2"
+                            value="Khác"
+                            checked={this.state.vtdGioiTinh === 'Khác'}
+                            onChange={this.qxtHandleChange}
+                        />
+                        <label htmlFor="qxtKhac">Khác</label>
+                    </div>
+
+                    <button type="submit" className="btn btn-success mt-3">
+                        Submit
+                    </button>
+                </form>
             </div>
-        </form>
-      </div>
-    )
-  }
+        );
+    }
 }
-export default  QxrEventForm3
