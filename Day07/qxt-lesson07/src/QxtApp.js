@@ -17,13 +17,18 @@ class QxtApp extends Component {
     };
   }
 
-  // Xóa sinh viên
-  qxtHandleDelete = (qxtId) => {
-    if (window.confirm("Bạn có chắc chắn muốn xóa sinh viên này không?")) {
-      this.setState((prevState) => ({
-        qxtStudents: prevState.qxtStudents.filter((student) => student.qxtId !== qxtId),
-      }));
-    }
+  // Xem chi tiết sinh viên
+  qxtHandleView = (qxtStudent) => {
+    this.setState({ qxtStudent });
+  };
+
+  // Cập nhật thông tin sinh viên
+  qxtHandleUpdate = (updatedStudent) => {
+    this.setState((prevState) => ({
+      qxtStudents: prevState.qxtStudents.map((student) =>
+        student.qxtId === updatedStudent.qxtId ? updatedStudent : student
+      ),
+    }));
   };
 
   render() {
@@ -37,10 +42,12 @@ class QxtApp extends Component {
                 <QxtControl />
                 <QxtStudentList
                   renderQxtStudents={this.state.qxtStudents}
-                  onQxtHandleDelete={this.qxtHandleDelete} // ✅ Truyền xuống
+                  onQxtHandleView={this.qxtHandleView}
+                  onQxtHandleUpdate={this.qxtHandleUpdate} // ✅ Truyền xuống
                 />
               </div>
             </div>
+
             <div className="col-5 grid-margin">
               <QxtForm renderQxtStudent={this.state.qxtStudent} />
             </div>
