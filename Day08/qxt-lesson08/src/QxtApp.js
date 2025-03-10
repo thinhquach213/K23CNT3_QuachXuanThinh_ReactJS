@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import QxtControl from './components/QxtControl';
 import QxtStudentList from './components/QxtStudentList';
 import QxtForm from './components/QxtForm';
-import QxtStudentDetail from './components/QxtStudentDetail'; 
+import QxtStudentDetail from './components/QxtStudentDetail';
 
 class QxtApp extends Component {
   constructor(props) {
@@ -71,7 +71,11 @@ class QxtApp extends Component {
   };
 
   onQxtHandleAddNew = () => {
-    this.setState({ selectedStudent: null, showDetail: false, isAddingNew: true });
+    this.setState({
+      selectedStudent: null,
+      showDetail: false,
+      isAddingNew: true
+    });
   };
 
   onQxtHandleSaveNew = (newStudent) => {
@@ -85,7 +89,7 @@ class QxtApp extends Component {
   render() {
     return (
       <div>
-        <h1 className='text-center'>Phạm Tuấn Anh - K23CNT3 - Mini Project</h1>
+        <h1 className='text-center'>Quach Xuan Thinh - K23CNT3 - Mini Project</h1>
         <section className='container-fluid mt-3'>
           <div className="row">
             <div className="col-lg-7 grid-margin stretch-card">
