@@ -5,9 +5,9 @@ import QxtMemberAdd from "./components/QxtMemberAdd";
 const QxtApp = () => {
   //khởi tạo thành viên
   const [members, setMembers] = useState([
-    { id: "230001", fullname: "Dặng Thị Test1", username: "Test1", password: "123456" },
-    { id: "230002", fullname: "Trần Thị A", username: "A", password: "abcdef" },
-    { id: "230003", fullname: "Lê Văn B", username: "B", password: "qwerty" },
+    { id: "230001", fullname: "Trần Hà Linh", username: "Linh", password: "123456" },
+    { id: "230002", fullname: "Hoàng Thùy Huyên", username: "Huyên", password: "abcdef" },
+    { id: "230003", fullname: "Cẩm Thùy Lan", username: "Lan", password: "qwerty" },
   ]);
 
 //thêm mới
