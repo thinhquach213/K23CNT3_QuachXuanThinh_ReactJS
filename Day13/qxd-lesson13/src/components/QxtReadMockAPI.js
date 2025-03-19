@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
      // khởi tạo state
      const [qxtListUser, setQxtListUser] = useState([])
      // api
-     const qxtApiOnline = "https://67d8d4b300348dd3e2a85cf3.mockapi.io/k23cnt3_vutienduc/vtd_user"
+     const qxtApiOnline = "https://67da68ef35c87309f52c4b62.mockapi.io/K23CNT3_QuachXuanThinh/Qxt_Users"
      // Đọc dữ liệu từ api bằng axios
      useEffect(()=>{
          axios

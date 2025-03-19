@@ -9,7 +9,7 @@ export default function QxtCreateMockAPI() {
     const [qxtActive, setQxtActive] = useState(true);
 
     // api post
-    const qxtCreateUser = "https://67d8d4b300348dd3e2a85cf3.mockapi.io/k23cnt3_quachxuanthinh/qxt_user";
+    const qxtCreateUser = "https://67da68ef35c87309f52c4b62.mockapi.io/K23CNT3_QuachXuanThinh/Qxt_Users";
 
     // khi submit form
     const qxtHandleSubmit = (event) => {
